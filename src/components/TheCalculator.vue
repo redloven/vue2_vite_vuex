@@ -38,11 +38,6 @@
         type: String,
       },
     },
-    created () {
-      setInterval(()=>{
-        this.$forceUpdate()
-      }, 100)
-    },
     data() {
       return {
         count: 0

@@ -16,8 +16,8 @@ export default {
   data () {
     return {
       name: '',
-      price: 0,
-      qty: 0,
+      price: null,
+      qty: null
     }
   },
 
@@ -31,7 +31,10 @@ export default {
           price: this.price,
           qty: this.qty
         })
-      
+        this.name = ''
+        this.price = null
+        this.qty = null
+        this.$nextTick(() => { this.$v.$reset() })
       } else {
         console.error(this.$v.name.$error, this.$v.price.$error, this.$v.qty.$error)
       }
